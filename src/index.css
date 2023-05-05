@@ -1,5 +1,11 @@
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  letter-spacing: 0.03em;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -14,6 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -24,4 +31,93 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+/* lesson panel */
+.lesson-panel {
+  border:1px solid red;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 6.25rem;
+  width: 75rem;
+  height: 10.625rem;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+  padding:2rem;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.meta{
+  display: flex;
+}
+/* progress */
+.progress{
+  display: flex;
+  padding: 3%;
+
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+  width:10.25rem; 
+  height:10.25rem;
+
+}
+
+.progress-circle-back {
+	fill: none; 
+	stroke: #D2D2D2;
+	stroke-width:6px;
+}
+
+.progress-circle-prog {
+  fill: none;
+  stroke: #307bbe;
+  stroke-width: 6px;
+  stroke-dasharray:177,277;
+  stroke-dashoffset: 0;
+  transition: stroke-dasharray 0.7s linear 0s;
+  -webkit-transition: stroke-dasharray 0.7s linear 0s;
+  -moz-transition: stroke-dasharray 0.7s linear 0s;
+  -ms-transition: stroke-dasharray 0.7s linear 0s;
+  -o-transition: stroke-dasharray 0.7s linear 0s;
+}
+/* percentage done */
+.percentage-complete h1{
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+.percentage-complete p{
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+
+}
+/* current */
+.currently{
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.percent{
+  margin-bottom: 0;
+}
+.state {
+  margin-top: 0;
+
 }

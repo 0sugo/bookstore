@@ -1,13 +1,227 @@
+html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #f5f6fa;
+  letter-spacing: 0.03em;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
     monospace;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  margin-top: 8.3rem;
+}
+
+/* navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6.25rem;
+  background-color: #fff;
+  height: 1.975rem;
+  width: 83rem;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+  text-decoration: none;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #121212;
+  letter-spacing: 1.9px;
+}
+
+.logo {
+  color: #0290ff;
+}
+
+.mask {
+  color: #0290ff;
+}
+
+/* lesson panel */
+.lesson-panel {
+  border: solid 1px #e8e8e8;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 6.25rem;
+  width: 83rem;
+  height: 10.625rem;
+  background-color: #fafafa;
+  padding: 2rem;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.meta {
+  display: flex;
+}
+
+/* progress */
+.progress {
+  display: flex;
+  padding: 3%;
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+  width: 10.25rem;
+  height: 10.25rem;
+}
+
+.progress-circle-back {
+  fill: none;
+  stroke: #d2d2d2;
+  stroke-width: 6px;
+}
+
+.progress-circle-prog {
+  fill: none;
+  stroke: #0290ff;
+  stroke-width: 6px;
+  stroke-dasharray: 177, 277;
+  stroke-dashoffset: 0;
+  transition: stroke-dasharray 0.7s linear 0s;
+  -webkit-transition: stroke-dasharray 0.7s linear 0s;
+  -moz-transition: stroke-dasharray 0.7s linear 0s;
+  -ms-transition: stroke-dasharray 0.7s linear 0s;
+  -o-transition: stroke-dasharray 0.7s linear 0s;
+}
+
+/* line dividing */
+.Line {
+  width: 79rem;
+  height: 0.125rem;
+  margin: 2rem 6.25rem 0 6.25rem;
+  border: solid 1px #e8e8e8;
+}
+
+/* percentage done */
+.percent {
+  font-size: 2rem;
+  color: #121212;
+  margin-bottom: 0;
+}
+
+.state {
+  opacity: 0.5;
+  font-size: 0.875rem;
+  color: #121212;
+  margin-top: 0;
+}
+
+/* current */
+.currently {
+  padding: 10px;
+}
+
+.add-book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem 6.25rem;
+  width: 83rem;
+  padding: 2rem;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.add-book h1 {
+  color: #888;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* input */
+input {
+  width: 60%;
+  height: 2.5rem;
+  border-radius: 4px;
+  background-color: #fafafa;
+  border: solid 1px #e8e8e8;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+::placeholder {
+  color: #c4c4c4;
+  opacity: 1;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #0290ff;
+}
+
+select {
+  width: 25%;
+  height: 3.6rem;
+  border-radius: 4px;
+  background-color: #fafafa;
+  border: solid 1px #e8e8e8;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.book-adder {
+  border: none;
+  display: flex;
+  height: 3.6rem;
+  align-items: center;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  background-color: #0290ff;
+  color: #fff;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }

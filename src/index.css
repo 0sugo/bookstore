@@ -39,7 +39,7 @@ code {
   justify-content: center;
   align-items: center;
   background: #fafafa;
-  margin-top: 9.3rem;
+  margin-top: 8.3rem;
 }
 
 /* navbar */
@@ -160,7 +160,7 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   margin: 1rem 6.25rem;
-  width: 75rem;
+  width: 83rem;
   padding: 2rem;
   border-radius: 4px;
   -webkit-border-radius: 4px;

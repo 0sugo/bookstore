@@ -1,4 +1,4 @@
-// import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 
 const BookItem = ({ genre, title, author }) => (
 
@@ -41,5 +41,7 @@ const BookItem = ({ genre, title, author }) => (
     </div>
   </div>
 );
-// BookItem.PropTypes = { props: PropTypes.object.isRequired };
+BookItem.propTypes = { genre: PropTypes.string.isRequired };
+BookItem.propTypes = { title: PropTypes.string.isRequired };
+BookItem.propTypes = { author: PropTypes.string.isRequired };
 export default BookItem;

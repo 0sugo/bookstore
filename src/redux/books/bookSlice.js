@@ -1,22 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    books:[],
-}
+  books: [],
+};
 const bookSlice = createSlice({
-    name:booksCount,
-    initialState,
-    reducers:{
-        increment:(state)=>{
-           state.books.push('kk'); 
-
-        },
-        decrement:(state,indexToRemove)=>{
-            state.books.slice(indexToRemove,1);
-
-        }
-    }
+  name: 'booksCount',
+  initialState,
+  // reducers: {
+  //   increment: (state) => {
+  //     state.books.push();
+  //   },
+  //   decrement: (state, indexToRemove) => {
+  //     state.books.slice(indexToRemove, 1);
+  //   },
+  // },
 });
 
-export const {increment , decrement } = bookSlice.actions;
+// export const { increment, decrement } = bookSlice.actions;
 export default bookSlice;

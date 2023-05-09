@@ -6,15 +6,16 @@ const initialState = {
 const bookSlice = createSlice({
   name: 'booksCount',
   initialState,
-  // reducers: {
-  //   increment: (state) => {
-  //     state.books.push();
-  //   },
-  //   decrement: (state, indexToRemove) => {
-  //     state.books.slice(indexToRemove, 1);
-  //   },
-  // },
+  reducers: {
+    add: (state, action) => {
+      state.books = state.books.push(action.payload);
+    },
+    remove: (state, action) => {
+      const indexToRemove = action.payload;
+      state.books = state.books.slice(indexToRemove, indexToRemove + 1);
+    },
+  },
 });
 
-// export const { increment, decrement } = bookSlice.actions;
-export default bookSlice;
+export const { add, remove } = bookSlice.actions;
+export default bookSlice.reducer;

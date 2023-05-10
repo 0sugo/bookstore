@@ -1,6 +1,9 @@
 import Options from './Options';
+import { useDispatch } from 'react';
 
-const AddBook = () => (
+const AddBook = () => {
+  const Dispatch = useDispatch();
+  (
   <div className="add-book">
     <h1>ADD NEW BOOK</h1>
     <form>
@@ -9,6 +12,6 @@ const AddBook = () => (
       <button type="submit" className="book-adder">ADD BOOK</button>
     </form>
   </div>
-);
+)};
 
 export default AddBook;

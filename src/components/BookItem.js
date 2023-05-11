@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 import Button from './Button';
 
 const BookItem = ({
-  genre, title, author, removeBook,item_id,
+  genre, title, author, removeBook, itemId,
 }) => (
 
   <div className="lesson-panel">
@@ -12,7 +12,7 @@ const BookItem = ({
       <p>{author}</p>
       <div className="meta">
         <button type="button">Comments</button>
-        <Button text="Remove" purpose={removeBook} id={item_id} />
+        <Button text="Remove" purpose={removeBook} id={itemId} />
         <button type="button">Edit</button>
       </div>
 
@@ -44,8 +44,10 @@ const BookItem = ({
     </div>
   </div>
 );
+BookItem.defaultProps = { itemId: '' };
 BookItem.propTypes = { genre: PropTypes.string.isRequired };
 BookItem.propTypes = { title: PropTypes.string.isRequired };
 BookItem.propTypes = { author: PropTypes.string.isRequired };
+BookItem.propTypes = { itemId: PropTypes.string };
 BookItem.propTypes = { removeBook: PropTypes.func.isRequired };
 export default BookItem;

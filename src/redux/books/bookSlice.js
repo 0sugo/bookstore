@@ -1,5 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice ,createAsyncThunk } from '@reduxjs/toolkit';
 
+const getBooks = createAsyncThunk('books/getbooks',async (thunkAPI)=>{
+  try {
+    const response = await axios(url);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue('something went wrong')
+    
+  }
+});
 const initialState = {
   books: [
     {

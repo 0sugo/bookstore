@@ -8,7 +8,8 @@ const Button = ({ text, purpose, id }) => (
     </button>
   </div>
 );
+Button.defaultProps = { id: '' };
 Button.propTypes = { text: PropTypes.string.isRequired };
 Button.propTypes = { purpose: PropTypes.func.isRequired };
-Button.propTypes = { id: PropTypes.string.isRequired };
+Button.propTypes = { id: PropTypes.string };
 export default Button;

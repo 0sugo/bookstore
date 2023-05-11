@@ -1,5 +1,7 @@
 import { createSlice ,createAsyncThunk } from '@reduxjs/toolkit';
 
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/H4on2RhGhmoYwzo3vLBp/books';
+
 const getBooks = createAsyncThunk('books/getbooks',async (thunkAPI)=>{
   try {
     const response = await axios(url);
@@ -43,6 +45,17 @@ const BookSlice = createSlice({
       state.books = state.books.filter((book) => book.item_id !== indexToRemove);
     },
   },
+  extraReducers:{
+    [getBooks.pending]:(state)=>{
+      state.isLoading =true;
+    },
+    [getBooks.fulfilled]:(state)=>{
+      state.isLoading =false;
+    },
+    [getBooks.rejected]:(state)=>{
+      state.isLoading =false;
+    },
+  }
 });
 
 export const { addBook, removeBook } = BookSlice.actions;

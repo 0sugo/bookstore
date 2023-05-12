@@ -65,17 +65,18 @@ nav {
 
 .main-nav {
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 40%;
   text-decoration: none;
+  padding: 0%;
+  margin-left: 6%;
 }
 
 .main-nav a {
   text-decoration: none;
   color: #121212;
   letter-spacing: 1.9px;
-  margin-left: 15%;
 }
 
 .logo {
@@ -102,7 +103,7 @@ nav {
   border: solid 1px #e8e8e8;
   justify-content: space-between;
   margin: 0  6.25rem 0.98rem 6.25rem;
-  width: 75rem;
+  width: 80%;
   height: 10.625rem;
   background-color: #fff;
   padding: 2rem;
@@ -137,11 +138,6 @@ nav {
   padding: 0 1rem 0 1rem;
 }
 
-.meta button:nth-child(3) {
-  border-right: none;
-}
-
-
 /* progress */
 .progress {
   padding: 3%;
@@ -174,7 +170,7 @@ nav {
 
 /* line dividing */
 .Line {
-  width: 79rem;
+  width: 85%;
   height: 0.125rem;
   margin: 2rem 6.25rem 0 6.25rem;
   border: solid 1px #e8e8e8;
@@ -186,7 +182,7 @@ nav {
   color: #121212;
   margin-bottom: 0;
   font-weight: normal;
-  font-family: Montserrat-Regular;
+  font-family: Montserrat, sans-serif;
 }
 
 .state {
@@ -229,7 +225,6 @@ nav {
   justify-content: space-between;
   margin: 0 6.25rem 0.98rem 6.25rem;
   width: 85%;
-  background: #fff;
   padding: 2rem;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -253,7 +248,7 @@ input {
   width: 60%;
   height: 2.5rem;
   border-radius: 4px;
-  background-color: #fafafa;
+  background-color: #fff;
   border: solid 1px #e8e8e8;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -307,4 +302,8 @@ select {
   height: 100vh;
   width: 100%;
   text-align: center;
+}
+
+.meta button:nth-child(3) {
+  border-right: none;
 }

@@ -46,8 +46,8 @@ const AddBook = () => {
     <div className="add-book">
       <h1>ADD NEW BOOK</h1>
       <form>
-        <input type="text" placeholder="Book title" value={title} onChange={HandleTitleChange} required />
-        <input type="text" placeholder="Author" value={author} onChange={HandleAuthorChange} required />
+        <input type="text" className="input-title" placeholder="Book title" value={title} onChange={HandleTitleChange} required />
+        <input type="text" className="input-author" placeholder="Author" value={author} onChange={HandleAuthorChange} required />
         <Options category={category} onCategoryChange={handleCategoryChange} />
         <Button text="Add book" purpose={HandlePurpose} />
       </form>

@@ -38,8 +38,9 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fafafa;
+  background-color: #fafafa;
   margin-top: 8.3rem;
+  width: 87.5rem;
 }
 
 /* navbar */
@@ -47,10 +48,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 6.25rem;
+  padding: 1.5rem 6.25rem 1.5rem 0;
   background-color: #fff;
-  height: 1.975rem;
-  width: 83rem;
+  height: 4.975rem;
+  width: 83%;
 }
 
 .main-nav {
@@ -58,7 +59,7 @@ nav {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  width: 35%;
+  width: 42%;
   text-decoration: none;
 }
 
@@ -70,6 +71,8 @@ nav {
 
 .logo {
   color: #0290ff;
+  font-size: 1.9rem;
+  font-weight: bold;
 }
 
 .mask {
@@ -81,10 +84,10 @@ nav {
   border: solid 1px #e8e8e8;
   display: flex;
   justify-content: space-between;
-  margin: 0 6.25rem;
-  width: 83rem;
+  margin: 0  6.25rem 0.98rem 6.25rem;
+  width: 75rem;
   height: 10.625rem;
-  background-color: #fafafa;
+  background-color: #fff;
   padding: 2rem;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -93,9 +96,33 @@ nav {
   -o-border-radius: 4px;
 }
 
+.lesson-panel p {
+  font-size: 0.9rem;
+  color: #121212;
+  letter-spacing: normal;
+  opacity: 0.5;
+}
+
+.lesson-panel h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-stretch: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
 .meta {
   display: flex;
 }
+
+.meta button {
+  border: none;
+  color: #4386bf;
+  background: #fff;
+  font-size: 0.9rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+}
+
 
 /* progress */
 .progress {
@@ -148,19 +175,43 @@ nav {
   font-size: 0.875rem;
   color: #121212;
   margin-top: 0;
+  letter-spacing: normal;
 }
 
 /* current */
-.currently {
+
+.currently p {
   padding: 10px;
+  opacity: 0.5;
+  font-size: 0.813rem;
+  color: #121212;
+}
+
+.currently button {
+  width: 11rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  border: none;
+  background: #0290ff;
+  color: #fafafa;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+#title {
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 .add-book {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 1rem 6.25rem;
-  width: 83rem;
+  margin: 0 6.25rem 0.98rem 6.25rem;
+  width: 85%;
+  background: #fff;
   padding: 2rem;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -172,6 +223,7 @@ nav {
 .add-book h1 {
   color: #888;
   font-weight: bold;
+  font-size: 1.25rem;
 }
 
 form {
@@ -188,6 +240,14 @@ input {
   border: solid 1px #e8e8e8;
   padding: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.input-title {
+  width: 31rem;
+}
+
+.input-author {
+  width: 12rem;
 }
 
 ::placeholder {
@@ -224,4 +284,11 @@ select {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+}
+
+.categories {
+  background: #f5f6fa;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
 }

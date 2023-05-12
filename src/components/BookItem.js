@@ -11,9 +11,9 @@ const BookItem = ({
       <h1>{title}</h1>
       <p>{author}</p>
       <div className="meta">
-        <button type="button">Comments</button>
+        <button className="button-unique" type="button">Comments</button>
         <Button text="Remove" purpose={removeBook} id={itemId} />
-        <button type="button">Edit</button>
+        <button className="button-unique" type="button">Edit</button>
       </div>
 
     </div>
@@ -39,7 +39,7 @@ const BookItem = ({
     </div>
     <div className="currently">
       <p>CURRENT CHAPTER</p>
-      <p>Chapter 17</p>
+      <p id="title">Chapter 17</p>
       <button type="button">UPDATE PROGRESS</button>
     </div>
   </div>

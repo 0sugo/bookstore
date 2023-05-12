@@ -34,11 +34,12 @@ const AddBook = () => {
   };
   const HandlePurpose = (e) => {
     e.preventDefault();
-    // const id = (books.length + 1);
 
     dispatch(addBooksToApi({
       item_id: generateRandomId(), title, author, category,
     }));
+    setTitle('');
+    setAuthor('');
   };
 
   return (

@@ -33,33 +33,41 @@ code {
     monospace;
 }
 
-.App {
+.flexer {
   display: flex;
+}
+
+.App {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fafafa;
   margin-top: 8.3rem;
-  width: 87.5rem;
+  width: 100%;
 }
 
 /* navbar */
 nav {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 6.25rem 1.5rem 0;
+  padding: 1.5rem 6.25rem 1.5rem 6.25rem;
   background-color: #fff;
   height: 4.975rem;
-  width: 83%;
+  width: 100%;
+}
+
+.nav-line {
+  width: 100%;
+  height: 0.125rem;
+  margin: 0  0 2.375rem 0;
+  border: solid 1px #e8e8e8;
 }
 
 .main-nav {
-  display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  width: 42%;
+  width: 40%;
   text-decoration: none;
 }
 
@@ -67,22 +75,31 @@ nav {
   text-decoration: none;
   color: #121212;
   letter-spacing: 1.9px;
+  margin-left: 15%;
 }
 
 .logo {
   color: #0290ff;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-weight: bold;
+  line-height: normal;
 }
 
 .mask {
   color: #0290ff;
+  margin-right: 6%;
+  border: 1px solid #f5f6fa;
+  padding: 2%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 /* lesson panel */
 .lesson-panel {
   border: solid 1px #e8e8e8;
-  display: flex;
   justify-content: space-between;
   margin: 0  6.25rem 0.98rem 6.25rem;
   width: 75rem;
@@ -111,21 +128,22 @@ nav {
   color: #121212;
 }
 
-.meta {
-  display: flex;
-}
-
 .meta button {
-  border: none;
+  border: unset;
+  border-right: 0.125rem solid #e8e8e8;
   color: #4386bf;
   background: #fff;
   font-size: 0.9rem;
-  margin: 0.188rem 0.938rem 0.125rem 0;
+  padding: 0 1rem 0 1rem;
 }
+
+.meta button:nth-child(3) {
+  border-right: none;
+}
+
 
 /* progress */
 .progress {
-  display: flex;
   padding: 3%;
 }
 
@@ -163,10 +181,12 @@ nav {
 }
 
 /* percentage done */
-.percent {
+#percent {
   font-size: 2rem;
   color: #121212;
   margin-bottom: 0;
+  font-weight: normal;
+  font-family: Montserrat-Regular;
 }
 
 .state {
@@ -205,7 +225,6 @@ nav {
 }
 
 .add-book {
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0 6.25rem 0.98rem 6.25rem;
@@ -226,7 +245,6 @@ nav {
 }
 
 form {
-  display: flex;
   justify-content: space-between;
 }
 
@@ -272,7 +290,6 @@ select {
 
 .book-adder {
   border: none;
-  display: flex;
   height: 3.6rem;
   align-items: center;
   padding: 0.801rem 1.188rem 0.886rem 1.375rem;

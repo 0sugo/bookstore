@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 
 const Button = ({ text, purpose, id }) => (
   <div>
-    <button type="submit" className="book-adder" id={id} onClick={(e) => { purpose(e); }}>
+    <button type="submit" className="book-adder flexer" id={id} onClick={(e) => { purpose(e); }}>
       {' '}
       {text}
     </button>

@@ -8,8 +8,8 @@ const BookItem = ({
   <div className="lesson-panel flexer">
     <div>
       <p>{genre}</p>
-      <h1>{title}</h1>
-      <p>{author}</p>
+      <h1 id="main-title">{title}</h1>
+      <p id="main-author">{author}</p>
       <div className="meta flexer">
         <button className="button-unique" type="button">Comments</button>
         <Button text="Remove" purpose={removeBook} id={itemId} />
@@ -37,6 +37,7 @@ const BookItem = ({
         <p className="state">Completed</p>
       </div>
     </div>
+    <div className="vertical-line" />
     <div className="currently">
       <p>CURRENT CHAPTER</p>
       <p id="title">Chapter 17</p>

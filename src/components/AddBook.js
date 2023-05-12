@@ -49,7 +49,7 @@ const AddBook = () => {
         <input type="text" className="input-title" placeholder="Book title" value={title} onChange={HandleTitleChange} required />
         <input type="text" className="input-author" placeholder="Author" value={author} onChange={HandleAuthorChange} required />
         <Options category={category} onCategoryChange={handleCategoryChange} />
-        <Button text="Add book" purpose={HandlePurpose} />
+        <Button text="ADD BOOK" purpose={HandlePurpose} />
       </form>
     </div>
   );

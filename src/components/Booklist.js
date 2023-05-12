@@ -6,6 +6,7 @@ import { removeBook } from '../redux/books/bookSlice';
 const Booklist = () => {
   const { books } = useSelector((store) => store.counter);
   const dispatch = useDispatch();
+  console.log(typeof books);
 
   const handleRemove = (e) => {
     dispatch(removeBook(e.target.id));

@@ -1,37 +1,27 @@
-import { createSlice ,createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/H4on2RhGhmoYwzo3vLBp/books';
+// const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/H4on2RhGhmoYwzo3vLBp/books';
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/M7CSX9j8jMgRuO6kDbwV/books';
 
-const getBooks = createAsyncThunk('books/getbooks',async (thunkAPI)=>{
+export const getBooks = createAsyncThunk('books/getbooks', async (thunkAPI) => {
   try {
     const response = await axios(url);
-    return response.data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue('something went wrong')
+    const dataArray = Object.values(response.data);
+    // console.log(dataArray[2][0].author);
+    const finArray = [];
     
+    dataArray.forEach((data) => {
+      finArray.push(data[0]);
+    });
+    // console.log(finArray);
+    return finArray;
+  } catch (error) {
+    return thunkAPI.rejectWithValue('something went wrong');
   }
 });
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: [],
 };
 const BookSlice = createSlice({
   name: 'booksCount',
@@ -45,17 +35,19 @@ const BookSlice = createSlice({
       state.books = state.books.filter((book) => book.item_id !== indexToRemove);
     },
   },
-  extraReducers:{
-    [getBooks.pending]:(state)=>{
-      state.isLoading =true;
+  extraReducers: {
+    [getBooks.pending]: (state) => {
+      state.isLoading = true;
     },
-    [getBooks.fulfilled]:(state)=>{
-      state.isLoading =false;
+    [getBooks.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.books = action.payload;
+      // console.log(state.books);
     },
-    [getBooks.rejected]:(state)=>{
-      state.isLoading =false;
+    [getBooks.rejected]: (state) => {
+      state.isLoading = false;
     },
-  }
+  },
 });
 
 export const { addBook, removeBook } = BookSlice.actions;

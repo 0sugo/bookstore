@@ -10,7 +10,7 @@ export const getBooks = createAsyncThunk('books/getbooks', async (thunkAPI) => {
     const dataArray = Object.values(response.data);
     // console.log(dataArray[2][0].author);
     const finArray = [];
-    
+
     dataArray.forEach((data) => {
       finArray.push(data[0]);
     });
@@ -35,18 +35,18 @@ const BookSlice = createSlice({
       state.books = state.books.filter((book) => book.item_id !== indexToRemove);
     },
   },
-  extraReducers: {
-    [getBooks.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [getBooks.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      state.books = action.payload;
-      // console.log(state.books);
-    },
-    [getBooks.rejected]: (state) => {
-      state.isLoading = false;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getBooks.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.books = action.payload;
+      })
+      .addCase(getBooks.rejected, (state) => {
+        state.isLoading = false;
+      });
   },
 });
 

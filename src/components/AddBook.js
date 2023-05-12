@@ -4,6 +4,19 @@ import Options from './Options';
 import Button from './Button';
 import { addBooksToApi } from '../redux/books/bookSlice';
 
+const generateRandomId = () => {
+  const alphanumericCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const idLength = 8;
+
+  let randomId = '';
+  for (let i = 0; i < idLength; i += 1) {
+    const randomIndex = Math.floor(Math.random() * alphanumericCharacters.length);
+    randomId += alphanumericCharacters[randomIndex];
+  }
+
+  return randomId;
+};
+
 const AddBook = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
@@ -24,7 +37,7 @@ const AddBook = () => {
     // const id = (books.length + 1);
 
     dispatch(addBooksToApi({
-      item_id: `${Math.random()}`, title, author, category,
+      item_id: generateRandomId(), title, author, category,
     }));
   };
 

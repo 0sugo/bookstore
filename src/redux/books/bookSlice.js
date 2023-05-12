@@ -20,6 +20,19 @@ export const getBooks = createAsyncThunk('books/getbooks', async (thunkAPI) => {
     return thunkAPI.rejectWithValue('something went wrong');
   }
 });
+
+export const addBooksToApi = createAsyncThunk('book/addbooks', async ({ ...bookObj }, thunkAPI) => {
+  const newBook = { ...bookObj };
+  try {
+    await axios.post(url, newBook);
+    const response = thunkAPI.dispatch(getBooks());
+    return response;
+  } catch (error) {
+    throw new Error('could not add book at the moment');
+  }
+});
+
+
 const initialState = {
   books: [],
 };
@@ -46,6 +59,13 @@ const BookSlice = createSlice({
       })
       .addCase(getBooks.rejected, (state) => {
         state.isLoading = false;
+      })
+      .addCase(addBooksToApi.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(addBooksToApi.fulfilled, (state) => {
+        state.isLoading = false;
+        // state.books = action.payload;
       });
   },
 });

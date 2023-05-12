@@ -5,13 +5,10 @@ import { deleteBooksFromApi } from '../redux/books/bookSlice';
 
 const Booklist = () => {
   const { books } = useSelector((store) => store.books) || [];
-  // console.log(books[1]);
   const dispatch = useDispatch();
-  // console.log(books[1]);
 
   const handleRemove = (itemId) => {
     dispatch(deleteBooksFromApi(itemId));
-    // console.log(typeof itemId);
   };
   if (books && books.length > 0) {
     return (
@@ -25,7 +22,6 @@ const Booklist = () => {
             removeBook={() => handleRemove(item.id)}
             itemId={item.item_id}
           />
-          // console.log(item.book.category)
 
         ))}
       </>

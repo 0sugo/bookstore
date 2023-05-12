@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './books/bookSlice';
+import booksReducer from './books/bookSlice';
 import categoriesReducer from './cartegories/categories';
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    books: booksReducer,
     category: categoriesReducer,
 
   },

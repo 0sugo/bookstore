@@ -1,5 +1,5 @@
 const Categories = () => (
-  <div>Kwa Categories</div>
+  <div className="categories">Under Construction</div>
 );
 
 export default Categories;

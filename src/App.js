@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App flexer">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

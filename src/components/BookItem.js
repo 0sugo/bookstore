@@ -5,19 +5,19 @@ const BookItem = ({
   genre, title, author, removeBook, itemId,
 }) => (
 
-  <div className="lesson-panel">
+  <div className="lesson-panel flexer">
     <div>
       <p>{genre}</p>
-      <h1>{title}</h1>
-      <p>{author}</p>
-      <div className="meta">
-        <button type="button">Comments</button>
+      <h1 id="main-title">{title}</h1>
+      <p id="main-author">{author}</p>
+      <div className="meta flexer">
+        <button className="button-unique" type="button">Comments</button>
         <Button text="Remove" purpose={removeBook} id={itemId} />
-        <button type="button">Edit</button>
+        <button className="button-unique" type="button">Edit</button>
       </div>
 
     </div>
-    <div className="progress">
+    <div className="progress flexer">
       <svg className="progress-circle" xmlns="http://www.w3.org/2000/svg">
         <circle
           className="progress-circle-back"
@@ -33,13 +33,14 @@ const BookItem = ({
         />
       </svg>
       <div className="percentage-complete">
-        <h1 className="percent">64%</h1>
+        <h1 id="percent">64%</h1>
         <p className="state">Completed</p>
       </div>
     </div>
+    <div className="vertical-line" />
     <div className="currently">
       <p>CURRENT CHAPTER</p>
-      <p>Chapter 17</p>
+      <p id="title">Chapter 17</p>
       <button type="button">UPDATE PROGRESS</button>
     </div>
   </div>
